@@ -1,0 +1,555 @@
+<!DOCTYPE html><html><head>
+      <title>solution</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:////Users/rohinarora/.atom/packages/markdown-preview-enhanced/node_modules/@shd101wyy/mume/dependencies/katex/katex.min.css">
+      
+      
+
+      
+      
+      
+      
+      
+      
+
+      <style>
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <p><strong>Answer 1</strong><br>
+Quicksort in CPP</p>
+<pre data-role="codeBlock" data-info class="language-"><code>#include &lt;algorithm&gt;
+#include &lt;iostream&gt;
+#include &lt;vector&gt;
+#include &lt;list&gt;
+#include &lt;set&gt;
+#include &lt;chrono&gt;
+#include &lt;numeric&gt;
+using namespace std;
+using namespace std::chrono;
+
+void print_vector_1d(vector&lt;int&gt; A){
+  // helper function
+  for (auto i : A){
+    cout&lt;&lt;i&lt;&lt;&quot; &quot;;
+  }
+  cout&lt;&lt;endl;
+}
+
+int _partition_(vector&lt;int&gt; &amp;A, int l, int r){
+  // find random pivot
+  srand(time(NULL));
+  int random_ind = l + rand() % (r - l);
+  // swap it with first  element
+  swap(A[random_ind],A[l]);
+  int p=A[l];
+  int i=l;
+  for (int j=l+1;j&lt;r+1;j++){
+    if (A[j]&lt;=p){
+      i=i+1;
+      swap(A[i],A[j]);
+    }
+  }
+  swap(A[i],A[l]);
+  // return the pivot position
+  return i;
+}
+
+void quicksort(vector&lt;int&gt; &amp;A, int l, int r){
+  if (l&lt;r){
+    int p=_partition_(A,l,r);
+    // pivot p is in its rightful place in the vector A. Now recurse on the remaining parts of A
+    quicksort(A,l,p-1);
+    quicksort(A,p+1,r);
+  }
+}
+
+
+int main(int argc, char const *argv[]) {
+  vector&lt;int&gt; v(100) ;
+  iota (begin(v), end(v), 1); // fill in 1-100 numbers in vector v
+  for (int i=0;i&lt;5;i++){
+    auto start = high_resolution_clock::now();
+    quicksort(v,0,v.size()-1);
+    auto stop = high_resolution_clock::now();
+    auto duration = duration_cast&lt;nanoseconds&gt;(stop - start);
+    cout &lt;&lt; &quot;time for quicksort is &quot;&lt;&lt;duration.count() &lt;&lt; &quot; ns&quot;&lt;&lt;endl;
+
+  }
+
+  return 0;
+}
+
+</code></pre><p>Output-</p>
+<blockquote>
+<p>time for quicksort is 23601 ns<br>
+time for quicksort is 13826 ns<br>
+time for quicksort is 13791 ns<br>
+time for quicksort is 13737 ns<br>
+time for quicksort is 13666 ns</p>
+</blockquote>
+<p><strong>Answer 2</strong><br>
+heap sort in CPP</p>
+<pre data-role="codeBlock" data-info class="language-"><code>#include &lt;random&gt;
+#include &lt;algorithm&gt;
+#include &lt;iterator&gt;
+#include &lt;iostream&gt;
+using namespace std;
+void print_vector_1d(vector&lt;int&gt; A){
+  // helper function
+  for (auto i : A){
+    cout&lt;&lt;i&lt;&lt;&quot; &quot;;
+  }
+  cout&lt;&lt;endl;
+}
+
+
+void max_heapify(vector&lt;int&gt; &amp;A,int i,int heap_size){
+  // fix one violation of heap property at node i
+  int left_idx=2*i+1;
+  int right_idx=2*i+2;
+  int largest;
+  if (left_idx&lt;=heap_size and A[left_idx]&gt;A[i]){
+    largest=left_idx;
+  }else{
+    largest=i;
+  }
+  if (right_idx&lt;=heap_size and A[right_idx]&gt;A[largest]){
+    largest=right_idx;
+  }
+  if (largest!=i){
+    swap(A[i],A[largest]);
+    max_heapify(A,largest,heap_size);
+  }
+  //print_vector_1d (A);
+}
+
+void build_max_heap(vector&lt;int&gt; &amp;A,int heap_size){
+  // Initialize heap. Runs in O(n) time
+  for (int i=int(heap_size/2)-1;i&gt;-1;--i){
+    max_heapify(A,i,heap_size);
+  }
+}
+
+void heap_sort(vector&lt;int&gt; &amp;A){
+  // first create the heap via build_max_heap
+  int heap_size=A.size()-1;
+  build_max_heap(A,A.size()-1);
+  // extract max one at a time
+  for (int i=A.size()-1;i&gt;-1;--i){
+    swap(A[0],A[i]);
+    heap_size=heap_size-1;
+    max_heapify(A,0,heap_size);
+  }
+}
+
+int main()
+{
+  // Create a vector with 1-100 numbers
+    vector&lt;int&gt; A;
+		for (int i=1; i&lt;101; ++i){
+	    A.push_back(i);
+	  }
+    random_device rd;
+    mt19937 g(rd());
+  // Shuffle the vector with 1-100 numbers
+    shuffle(A.begin(), A.end(), g);
+		cout &lt;&lt;&quot;Shuffled permutation is &quot;;
+		print_vector_1d (A);
+
+  // Call heap_sort
+    heap_sort(A);
+    cout &lt;&lt;&quot;Sorted permutation is &quot;;
+    print_vector_1d (A);
+}
+
+</code></pre><p>Output</p>
+<blockquote>
+<p>Shuffled permutation is<br>
+56 69 27 11 87 17 50 45 89 62 98 5 24 13 96 66 38 7 3 73 70 59 90 79 71 54 23 57 61 81 72 91 67 77 68 36 48 88 64 9 10 20 1 29 12 4 39 93 49 58 92 41 44 33 37 55 75 40 63 21 2 83 22 6 18 30 52 42 47 25 65 80 100 97 32 74 16 99 19 60 8 28 53 84 95 85 82 51 31 15 34 35 86 78 94 43 14 26 46 76</p>
+</blockquote>
+<blockquote>
+<p>Sorted permutation is<br>
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100</p>
+</blockquote>
+<p><strong>Answer 3</strong><br>
+counting_sort code in C++</p>
+<pre data-role="codeBlock" data-info class="language-"><code>#include &lt;vector&gt;
+#include &lt;iostream&gt;
+
+using namespace std;
+
+void print_vector_1d(vector&lt;int&gt; A){
+  //helper function
+  cout &lt;&lt;&quot;Sorted output is &quot;;
+  for (auto i : A){
+    cout&lt;&lt;i&lt;&lt;&quot; &quot;;
+  }
+  cout&lt;&lt;endl;
+}
+
+vector&lt;int&gt; counting_sort(vector&lt;int&gt; A){
+  vector&lt;int&gt; C(*max_element(A.begin(), A.end())+1,0); //initialize C
+  vector&lt;int&gt; B(A.size(),0); //initialize B. B has output elements
+  for (auto i=0;i&lt;A.size();++i){
+    C[A[i]]=C[A[i]]+1;
+  }
+
+  for (auto i=1;i&lt;C.size();++i){
+    C[i]=C[i]+C[i-1];  // cummulative sum
+  }m
+
+  for (int i=A.size()-1;i&gt;-1;i=i-1){
+    B[C[A[i]]-1]=A[i];
+    C[A[i]]=C[A[i]]-1;
+  }
+  return B; // final array
+}
+
+int main(int argc, char const *argv[]) {
+  vector&lt;int&gt; A{20, 18, 5, 7, 16, 10, 9, 3, 12, 14, 0};
+  vector&lt;int&gt; B=counting_sort(A);
+  print_vector_1d(B);
+  return 0;
+}
+
+
+</code></pre><blockquote>
+<p>Output - 0 3 5 7 9 10 12 14 16 18 20</p>
+</blockquote>
+<p><strong>Answer 4</strong><br>
+radix_sort code in C++</p>
+<pre data-role="codeBlock" data-info class="language-"><code>#include &lt;vector&gt;
+#include &lt;iostream&gt;
+#include &lt;math.h&gt;
+using namespace std;
+void print_vector_1d(vector&lt;int&gt; A){
+  cout &lt;&lt;&quot;Sorted answer is &quot;;
+  for (auto i : A){
+    cout&lt;&lt;i&lt;&lt;&quot; &quot;;
+  }
+  cout&lt;&lt;endl;
+}
+
+vector&lt;int&gt; counting_sort(vector&lt;int&gt; A,int j){
+  /*
+  A has array of numbers. j represents the digit of element of A on which count sort will operate
+  For eg.
+  A=[329, 457, 657, 839, 436, 720, 353]; j=0. Count sort will work on LSB
+  A=[329, 457, 657, 839, 436, 720, 353]; j=1. Count sort will work on middle bit(digit)
+  A=[329, 457, 657, 839, 436, 720, 353]; j=2. Count sort will work on MSB
+  */
+  vector&lt;int&gt; C(10,0); //initialize C. 0-9 digits
+  vector&lt;int&gt; B(A.size(),0); //#initialize B. B is output array
+  for (auto i=0;i&lt;A.size();++i){
+    int _num_=int(A[i]/pow(10,j));
+    _num_=_num_%10; // extract jth digit from element of A
+    C[_num_]=C[_num_]+1; // count the number of times this jth digit comes
+  }
+
+  for (auto i=1;i&lt;C.size();++i){
+    C[i]=C[i]+C[i-1];
+  }
+
+  for (int i=A.size()-1;i&gt;-1;i=i-1){
+
+    int _num_=int(A[i]/pow(10,j));
+    _num_=_num_%10; // extract jth digit from element of A
+    B[C[_num_]-1]=A[i]; // arrange elements in output array based on C indexed by jth bit of element of A
+    C[_num_]=C[_num_]-1;
+  }
+  //print_vector_1d (B); // uncomment to see counting sort is stable sort ! (And works correctly)
+  return B;
+}
+
+vector&lt;int&gt; radix_sort(vector&lt;int&gt; A){
+  // Figure how many digits are there in the elements of A. Given by max_digits.
+  int max_digits=0;
+  for (int i:A){
+    int digits=0;
+    while(i!=0){
+      i=(int) i/10;
+      digits=digits+1;
+    }
+    if (digits&gt;max_digits){
+      max_digits=digits;
+    }
+  }
+  // call counting_sort for every digit of element of A, starting with LSB.
+  // corresponds to j=0 below
+  for (auto j=0;j&lt;max_digits;++j){
+    A=counting_sort(A,j);
+  }
+  return A;
+}
+
+int main(int argc, char const *argv[]) {
+  vector&lt;int&gt; A{329, 457, 657, 839, 436, 720, 353};
+  vector&lt;int&gt; B=radix_sort(A);
+  print_vector_1d(B);
+  return 0;
+}
+
+</code></pre><blockquote>
+<p>Output- 329 353 436 457 657 720 839</p>
+</blockquote>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
