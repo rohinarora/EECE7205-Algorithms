@@ -35,12 +35,18 @@ class Solution():
             m=m-1
             self.G[m]=column-self.B[m][column]
             column=self.B[m][column]
-        print ("C Matrix is : ",self.C)
-        #print ("B Matrix is : ",self.B)
+        print ("C Matrix is : ")
+        for i in range(len(self.C)):
+            print (self.C[i])
+        print ("\n")
+        print ("B Matrix is : ")
+        for i in range(len(self.B)):
+            print (self.B[i])
+        print ("\n")
         return (self.G)
 
 
 sol_obj=Solution()
 A=[3,9,7,8,2,6,5,10,1,7,6,4]
-answer=sol_obj.MMG(A,len(A),6)
+answer=sol_obj.MMG(A,len(A),3)
 print ("Optimal Grouping of matrix A is :",answer)
