@@ -1,6 +1,6 @@
 Our graph is-
 
-![](1.jpg)
+![](./1.jpg)
 
 ### 1. Prim’s algorithm using adjacency matrix to represent graph and unsorted array for priority queue Q
 ```
